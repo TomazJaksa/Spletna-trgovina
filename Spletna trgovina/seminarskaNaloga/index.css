@@ -1,0 +1,722 @@
+/*Ti selektorji se nanašajo na vse strani moje spletne trgovine*/
+/*Ustvarimo telo z določenimi lastnostmi*/
+#telo{
+	background-color: #ffcc00;
+	height: 100%;
+	width: 100%;
+	margin: 0%;
+}
+
+
+tr,td,div,p,span, input{font-family: 'Poiret One', cursive; } /*pisavo spremenimo na "Poiret One" na vseh spletnih straneh*/
+
+span#slogan{
+	color: gray;
+}
+
+/*Vse glave naj bodo bele*/
+#glava{
+	background-color: white;
+	height: 3em;
+	width: 100;
+}
+/*ADMINISTRACIJA*/
+#brskanjePoBazi{
+	background-color: #064f40;
+	color: white;
+	display: inline;
+	padding: 0.5em;
+
+
+}
+
+#narocilaTabela{
+	border: black solid 1px;
+	background-color: white;
+
+}
+
+.imena{
+	background-color: #900;
+	font-weight: bold;
+	color: white;
+}
+
+#vnosArtiklov{
+	background-color: #064f40 ;
+	color: white;
+	display: inline;
+	padding: 0.5em;
+
+
+}
+
+#izpisNarocil{
+	background-color: #064f40;
+	color: white;
+	display: inline;
+	padding: 0.5em;
+
+
+}
+/*KONEC ADMINISTRACIJSKIH ZAVIHKOV*/
+#
+#rumenaCrta{
+	height: 0.5em;
+	background-color: #ffcc00;
+}
+/*se nanaša na črno črto v navigacijskem meniju (ob zavihkih, izpiše na kateri strani se nahajamo)*/
+#izbrana{
+	background-color: black;
+	display:block;
+	color: white;
+}
+
+/*zavihek "o podjetju"*/
+#oPodjetju{
+	background-color: red;
+	color: white;
+	display: inline;
+	padding: 0.5em;
+
+
+}
+/*zavihek "artikli"*/
+#artikli{
+	background-color: #064f40;
+	color: white;
+	display: inline;
+	padding: 0.5em;
+
+}
+/*zavihek prijava (ni isto kot registracija). Registracija preveri v bazi ali uporabniško ime že obstaja.
+V kolikor ne, ga doda v bazo. Prijava pa poiše ime v bazi, da te prijavi.*/
+#prijava{
+	background-color: red;
+	color: white;
+	display: inline;
+	padding: 0.5em;
+
+}
+/*zavihek "kontakt"*/
+#kontakt{
+	background-color: red;
+	color: white;
+	display:inline;
+	padding: 0.5em;
+	
+}
+/*zavihek "Vstopna stran"*/
+#vstopnaStran{
+	background-color: red;
+	color: white;
+	display: inline;
+	padding: 0.5em;
+	
+
+}
+
+#profil{
+	background-color: #064f40;
+	color: white;
+	display: inline;
+	padding: 0.5em;
+}
+
+/*spreminjanje lastnosti zavihkov, ko gremo z miško skozi njih*/
+#brskanjePoBazi:hover,#vnosArtiklov:hover, #izpisNarocil:hover,#artikli:hover, #prijava:hover, #kontakt:hover, #vstopnaStran:hover, #oPodjetju:hover, #profil:hover{
+	background-color: #900;
+	transition: 1s;
+}
+
+/*Galerija slik na vstopni strani.*/
+.galerijaSlik{
+	position: relative;
+	max-width: 400px;
+	height: 300px;
+	margin-left: 8em;
+	margin-top: 6em;
+	float: left;
+}
+/*galerija slik je sestavljena iz "figur". Tukaj uredimo lastnosti figur*/
+.galerijaSlik figure{
+	margin: 0;
+	position: absolute;
+}
+/*Figcaption je besedilo, ki se izpiše kadar gremo z miško skozi sliko.*/
+.galerijaSlik figcaption{
+	position: absolute;
+	top: 0;
+	color: #fff;
+	background: rgba(0,0,0, .3);
+	font-size: 1em;
+	padding: 8px 12px;
+	opacity: 0;
+	transition: opacity 0.5;
+
+}
+
+
+/*dodatne lastnosti za figure in figcaption*/
+.galerijaSlik:hover figure figcaption{
+	transition: opacity .5s;
+	opacity: 1; /* vidljivost, transparentnost*/
+}
+.galerijaSlik figure{
+	opacity: 0;
+}
+
+/*Urejanje spreminjanja slik. Vseh slik je 8. vsako bomo pustili 4 sekunde.
+Torej za izris vseh slik rabimo 32 sekund. To je naš drugi parameter. tretji (0s) pomeni,
+kdaj naj se slika prikaže. v drugi figuri je tretji parameter 4s. torej takrat bo prva slika izginila in prikazala se bo druga.
+*/
+figure:nth-child(1){
+	animation: xfade 32s 0s infinite;
+}
+
+figure:nth-child(2){
+	animation: xfade 32s 4s infinite;
+}
+
+figure:nth-child(3){
+	animation: xfade 32s 8s infinite;
+}
+
+figure:nth-child(4){
+	animation: xfade 32s 12s infinite;
+}
+
+figure:nth-child(5){
+	animation: xfade 32s 16s infinite;
+}
+
+figure:nth-child(6){
+	animation: xfade 32s 20s infinite;
+}
+
+figure:nth-child(7){
+	animation: xfade 32s 24s infinite;
+}
+
+figure:nth-child(8){
+	animation: xfade 32s 28s infinite;
+}
+
+/*urejanje lastnosti povezav na vseh straneh*/
+a{
+	text-decoration: none;
+	color: white;
+}
+
+/*urejanje lastnosti specifične povezave z id="registracija"*/
+a#registracija{
+	text-decoration: none;
+	color: black;
+}
+ 
+ /*Zadnji sestavni element galerije slik. skrbi, kako se bo premik iz slike na sliko izvedel.*/
+@keyframes xfade{ /*xfade je prvi parameter, ki smo ga navedli v vsaki figuri.*/
+   0%{
+      opacity: 1;
+   }
+   10.5% {	 /* 100/8 = 12.5 na eno sliko. Za izris nove slike so potrebni 2 sekundi. Torej pri 10.5% naj bo slika vidna.. */
+      opacity:1;
+   }
+   12.5%{
+      opacity: 0; /* Pri 12.5 pa naj že izgine (Pri tem se prikaže nova!)*/
+   }
+   98% {
+      opacity:0; /*ta dva  (98%, 100%) selektorja sta vedno enaka. Just copy and paste.*/
+   }
+   100% {
+      opacity:1;
+   }
+}
+
+#levaStran{
+	float: left;
+	margin-left: 3em;	
+}
+/*ureja lastnosti elementa spletne strani z id="desnaStran"*/
+#desnaStran{
+	background-color: red;
+	float: right;
+	height:34em;
+	width: 40%;
+	margin-top: -1.3em;
+	margin-bottom: 0.05em;
+}
+
+/*Gumb za registracijo. Tukaj določimo njegove lastnosti*/
+#registrirajSe{
+	background-color: white;
+	display: inline;
+	padding: 1em;
+	line-height: 0;
+	text-align: center;
+	font-size: 2em;
+	margin-left: 3em;
+	margin-top: 2em;
+	position: absolute;
+	border-radius: 6px;
+
+	
+
+}
+
+/*Ko gremo z miško skozi gumb, naj se spremeni njegovo ozadje*/
+#registrirajSe:hover{
+	background-color: #ffcc00;
+	transition: 1s;
+	border:  white;
+}
+
+/*Tukaj urejamo tekst na desni strani vstopne strani. "Še nisi član?..." Kot <div> Torej, ta selektor uporabimo za pozicioniranje.*/
+#nagovor{
+	position:absolute;
+	margin-top: 10em;
+	margin-left: 9em;
+	vertical-align: center;
+	text-align: center;
+	margin-right: 7em;
+}
+
+/*Urejamo tekst v nagovoru.*/
+#nagovor h1,p{
+	font-weight: bold ;
+	font-size: 20px;
+	margin-right: 1em;
+	color: white;
+}
+
+/*Pozicioniramo sliko pod nagovorom*/
+#registracijaSlika{
+	margin-top: 23em;
+	margin-left: 11em;
+}
+
+/*Izriše črno črto na dnu spletih strani*/
+#crnaCrta{
+	background-color: black;
+	height: 1em;
+	width: 100%;
+	clear: both;
+}
+/*Izriše belo črto na dnu spletne strani*/
+#noga{
+	background-color: white;
+	height: 4em;
+	width: 100;
+	clear:both;
+}
+
+/*Na belo črto dodamo slike (3)*/
+.slikeNoga1{
+	display: inline; /*naredi tako, da se slika za to sliko nalepijo v isto vrsto*/
+	height: 40px;
+	width: 40px;
+	margin-top: 1em;
+	margin-left: 5em;
+}
+
+.slikeNoga2{
+	display: inline;
+	height: 40px;
+	width: 40px;
+	margin-left: 20em;
+	margin-top: 1em;
+
+}
+
+.slikeNoga3{
+	display: inline;
+	height: 40px;
+	width: 100px;
+	margin-left: 15em;
+	margin-top: 1em;
+}
+
+/*Na koncu vrste je tekst. Tukaj mu uredimo lastnosti.*/
+#paragrafNoga{
+	font-size: 7px;
+	color: #888;
+	display: inline;
+	margin-left: 4em;
+}
+
+/*------------------------KONEC SELEKTORJEV, KI UREJAJO VSE SPLETNE STRANI--------------------------*/
+
+/*SELEKTORJI, KI UREJAJO STRAN: "registracija.php"*/
+
+/*Pozicioniranje obrazca.*/
+#registracijskiForm{
+	margin-left: 3em;
+	
+}
+
+/*Pozicioniranje gumba "Pošlji!"*/
+#submitGumb{
+	margin-left: 4em;
+}
+/*Poravnava obrazca na levo stran*/
+#registracijaLevaStran{
+	float:left;
+}
+
+/*Poravnava rdečega ozadja na desno stran*/
+#registracijaDesnaStran{
+	float:right;
+	height: 38em;
+	width: 50em;
+	background-color: red;
+	float: right;
+	margin-top: -1.2em;
+}
+
+p#nagovorRegistracija{
+	margin-left: 4em;
+}
+
+h1#naslovDesnaStran{
+	margin-left: 1em;
+}
+
+
+.galerijaSlikRegistracija{
+	position: relative;
+	max-width: 400px;
+	height: 300px;
+	margin-left: 20em;
+	margin-top: 3em;
+	float: left;
+}
+/*galerija slik je sestavljena iz "figur". Tukaj uredimo lastnosti figur*/
+.galerijaSlikRegistracija figure{
+	margin: 0;
+	position:absolute;
+}
+
+.galerijaSlikRegistracija figure{
+	opacity:0;
+}
+
+/*Urejanje spreminjanja slik. Vseh slik je 8. vsako bomo pustili 4 sekunde.
+Torej za izris vseh slik rabimo 32 sekund. To je naš drugi parameter. tretji (0s) pomeni,
+kdaj naj se slika prikaže. v drugi figuri je tretji parameter 4s. torej takrat bo prva slika izginila in prikazala se bo druga.
+*/
+figure#prva{
+	animation: xfade 32s 0s infinite;
+}
+
+figure#druga{
+	animation: xfade 32s 4s infinite;
+}
+
+figure#tretja{
+	animation: xfade 32s 8s infinite;
+}
+
+figure#cetrta{
+	animation: xfade 32s 12s infinite;
+}
+
+figure#peta{
+	animation: xfade 32s 16s infinite;
+}
+
+figure#sesta{
+	animation: xfade 32s 20s infinite;
+}
+
+figure#sedma{
+	animation: xfade 32s 24s infinite;
+}
+
+figure#osma{
+	animation: xfade 32s 28s infinite;
+}
+
+ /*Zadnji sestavni element galerije slik. skrbi, kako se bo premik iz slike na sliko izvedel.*/
+@keyframes xfade{ /*xfade je prvi parameter, ki smo ga navedli v vsaki figuri.*/
+   0%{
+      opacity: 1;
+   }
+   10.5% {	 /* 100/8 = 12.5 na eno sliko. Za izris nove slike so potrebni 2 sekundi. Torej pri 10.5% naj bo slika vidna.. */
+      opacity:1;
+   }
+   12.5%{
+      opacity: 0; /* Pri 12.5 pa naj že izgine (Pri tem se prikaže nova!)*/
+   }
+   98% {
+      opacity:0; /*ta dva  (98%, 100%) selektorja sta vedno enaka. Just copy and paste.*/
+   }
+   100% {
+      opacity:1;
+   }
+}
+
+/*SELEKTORJI, KI UREJAJO STRAN: "zeRegistrirani.php"*/
+img#registracijaNeuspesna{
+	margin-left: 27em;
+}
+
+h1.registracijaNeuspesnaNagovor{
+	margin-left: 12em;
+	font-family: 'Poiret One', cursive;
+}
+
+img#registracijaUspesna{
+	margin-left: 27em;
+}
+
+h1.registriranNagovor{
+	margin-left: 6em;
+	font-family: 'Poiret One', cursive;
+
+}
+
+/*SELEKTORJI, KI UREJAJO STRAN: "artikli.php" */
+#orodje{
+	margin-left: 2em;
+}
+.dodajVKosarico{
+	background-color: white;
+	border-radius: 6px;
+	text-align: center;
+}
+
+.dodajVKosarico:hover{
+	background-color: #064f40;
+	transition: 0.3s;
+}
+
+#gumbTransakcija{
+	background-color: white;
+	width:6em;
+	text-align:center;
+	margin-left: 11em;
+	padding:0.1em;
+	border-radius:6px;
+}
+
+#gumbTransakcija:hover{
+	background-color: #064f40;
+	transition: 0.5s;
+}
+
+#desnaStranArtikli{
+	background-color: red;
+	width: 26.9em;
+	margin-top: -1.3em;
+	margin-bottom: 0.05em;
+	margin-left: 40.5em;
+	text-align: center;
+	height: 100em;
+}
+
+
+#seznamArtiklov{
+	float:left;
+	margin-left: -1em;
+}
+
+/*SELEKTORJI, KI UREJAJO STRAN: "kontakt.php"*/
+span.kontaktBarva{
+	color: black;
+}
+
+#kontaktSlika{
+	float:left;
+	margin-left: 5em;
+	margin-top: 3em;
+	}
+
+
+
+#kontaktSlika2{
+	margin-top: 2em;
+}
+
+p#kontaktBesedilo{
+	float:left;
+}
+
+p#kontaktBesedilo2{
+	float:left;
+}
+
+#kontaktDesnaStran{
+	background-color: red;
+	float: right;
+	height: 34em;
+	width: 40%;
+	margin-top: -1.3em;
+	margin-bottom: 0.05em;
+	text-align: center;
+}
+
+#avtorBesedilo{
+	margin-left: 2em;
+}
+
+/*SELEKTORJI, KI UREJAJO STRAN: "oPodjetju.php"*/
+#naslovOPodjetju{
+	float:left;
+}
+
+#besediloOPodjetju{
+	float:left;
+	width: 27em;
+}
+
+#slikaOPodjetju{
+	float: right;
+	margin-right: 5em;
+}
+
+#desnaStranOPodjetju{
+	background-color: red;
+	float: right;
+	height: 60em;
+	width: 40%;
+	margin-top: -1.3em;
+	margin-bottom: 0.05em;
+	margin-left: 2em;
+}
+
+#zgodovinaNaslov{
+	float: left;
+	margin-left: 1em;
+	margin-top: 1em;
+}
+#zgodovinaSlika{
+	float: right;
+	margin-right: 1em;
+	margin-top: 0.7em;
+}
+
+#zgodovinaBesedilo{
+	width: 17em;
+	margin-left: 2em;
+}
+
+#slikaID{
+	margin-left: 10em;
+}
+
+/*SELEKTORJI, KI UREJAJO STRA: "prijava.php"*/
+#prijavaForm{
+	margin-left: 30em;
+}
+
+#prijavaSlika{
+	margin-left: 28em;
+}
+
+#prijavaGumb{
+	margin-left: 2em;
+}
+
+#oglejProfil{
+	background-color: white;
+	padding : 0.5em;
+	width: 5em;
+	height: 2em;
+	border-radius: 6px;
+	margin-left: 31em;
+	text-align: center;
+	vertical-align: center;
+	padding-bottom: 1em;
+}
+
+
+#oglejProfil:hover{
+	background-color: #900;
+	transition: 0.5s;
+}
+
+#prijavaNagovor1{
+	font-weight: bold;
+}
+
+
+#prijavljen{
+	text-align: center;
+}
+
+a#pojdiNaProfil{
+	color: black;
+	font-weight: bold;
+}
+
+/*SELEKTORJI, KI UREJAJO STRAN: "profil.php"*/
+
+#desnaStranProfil{
+	background-color: red;
+	float: right;
+	height: 34em;
+	width: 40%;
+	margin-top: -1.3em;
+	margin-bottom: 0.05em;
+	text-align: center;
+}
+
+#levaStranProfil{
+	float: left;
+	margin-left: 3em;
+}
+a#odjavaNapis{
+	color: black;
+	font-size: 1em;
+}
+h3#odjavaNagovor{
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+#odjavaGumb:hover{
+	background-color: #fc0;
+	transition: 0.5s;
+}
+
+#odjavaGumb{
+	background-color: white;
+	border-radius: 6px;
+	width: 7em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	text-align: center;
+	vertical-align: center;
+	margin-left: 10em;
+}
+/* SELEKTORJI, KI UREJAJO LASTNOSTI NA STRANI 'admin.php'*/
+#levaStranAdmin{
+
+	margin-left: 2em;
+	float: left;
+}
+
+#desnaStranAdmin{
+	background-color: red;
+	float: right;
+	height: 45em;
+	width: 40%;
+	margin-top: -1.3em;
+	margin-bottom: 0.05em;
+	text-align: center;
+}
+
+#narocila{
+	background-color: white;
+	border : black solid 1px;
+}
+/*SELEKORJI, KI UREJAJO LASTNOSTI NA STRANI 'vnosArtiklov.php'*/
+#desnaStranVnosArtiklov{
+	background-color: red;
+	float: right;
+	height: 60em;
+	width: 40%;
+	margin-top: -1.3em;
+	margin-bottom: 0.05em;
+	text-align: center;
+}
