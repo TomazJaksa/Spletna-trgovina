@@ -11,7 +11,7 @@
 <html>
 	<head>
 		<!-- NASLOV V ZAVIHKU -->
-		<title>Inter Diskont - Veliko več kot trgovina</title>
+		<title>Inter Diskont - Več kot trgovina</title>
 		<!-- UPORABA ŠUMNIKOV -->
 		<meta charset="utf-8"/>
 		<!-- CSS DATOTEKA -->
