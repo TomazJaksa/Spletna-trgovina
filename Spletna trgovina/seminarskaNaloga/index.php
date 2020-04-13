@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	
+
 	//Če je trenutni uporabnik določen. Torej je bilo v obrazec vpisano pravilno prijavno ime, naj se to shrani v $trenutniUporabnik
 
 	if(isset($_SESSION['trenutniUporabnik'])){
@@ -11,7 +11,7 @@
 <html>
 	<head>
 		<!-- NASLOV V ZAVIHKU -->
-		<title>Inter Diskont - Več kot trgovina</title>
+		<title>Inter Diskont - Veliko več kot trgovina</title>
 		<!-- UPORABA ŠUMNIKOV -->
 		<meta charset="utf-8"/>
 		<!-- CSS DATOTEKA -->
@@ -20,28 +20,28 @@
 		<link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 		<!-- DODAJANJE IKONE V ZAVIHKU-->
 		<link rel="SHORTCUT ICON" href="https://cdn4.iconfinder.com/data/icons/harwdware-tools-v2/512/box_case_toolbox_tools-128.png" type="image/x-icon" />
-		
+
 	</head>
-	
+
 	<body id="telo">
 
-		
+
 
 			<div id="glava">
 				<div id = "logo">
 					<marquee scrollamount="10"
 						direction="left"
 						behavior="slide">
-			
+
 						<img src="https://images.cdn-cnj.si/sellers/Interdiskont.png" />
 					</marquee>
-					
+
 				</div>
 			</div>
 			<div id="rumenaCrta"></div>
 			<div id="izbrana">
-				<div id="navigacija">	
-					<?php 
+				<div id="navigacija">
+					<?php
 					if(isset($trenutniUporabnik)){
 						echo "Prijavljen uporabnik ne more na naslovno stran!";
 					}else{
@@ -50,13 +50,13 @@
 							  <div id = 'oPodjetju'><a href='oPodjetju.php'>O PODJETJU</a></div>
 						      <dvi id = 'prijava'><a href='prijava.php'>PRIJAVA<a/></div>";
 					}
-					
+
 					?>
 					<h1>INTER DISKONT  <span id="slogan">Pravo orodje za dobro ceno</span></h1>
 
 				</div>
 			</div>
-			
+
 			<div class ="galerijaSlik">
 				<figure>
 				<img class="show" src="https://cdn1.iconfinder.com/data/icons/tools/32/tools-drill-512.png" width="400" height="300" />
@@ -101,8 +101,8 @@
 			</div>
 			<div id="desnaStran">
 				<div id="registrirajSe"><a id="registracija" href="registracija.php">Registriraj se!</a></div>
-				<div id="nagovor"><h1>Še nisi član?</h1><p>Registriraj se 
-					in uživaj v popustih in mnogih drugih ugodnostih, 
+				<div id="nagovor"><h1>Še nisi član?</h1><p>Registriraj se
+					in uživaj v popustih in mnogih drugih ugodnostih,
 					ki jih prinaša članstvo!</p></div>
 				<img id="registracijaSlika" src="https://cdn2.iconfinder.com/data/icons/ballicons-2-free/100/wrench-512.png" width="100px" height="100px"/>
 			</div>
@@ -113,7 +113,7 @@
 				<img class="slikeNoga3" src="http://www.interdiskont.si/files/interdiskont/userfiles/excellent-sme.png"/>
 				<p id="paragrafNoga">Copyright © 2008-2016 Inter diskont d.o.o.. Vse pravice pridržane.</p>
 			</div>
-			
-			
+
+
 	</body>
 </html>
